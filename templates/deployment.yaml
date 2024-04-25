@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: meta-ms-organization
+  name: {{ name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: meta-ms-organization
+      app: {{ name }}
   template:
     metadata:
       labels:
-        app: meta-ms-organization
+        app: {{ name }}
     spec:
       containers:
-        - name: meta-ms-organization
-          image: jmartinezblanco/meta-ms-organization
+        - name: {{ name }}
+          image: jmartinezblanco/{{ name }}
           ports:
             - containerPort: 3000
